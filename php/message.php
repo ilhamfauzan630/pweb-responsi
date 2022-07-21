@@ -8,10 +8,9 @@
     <title>Web Toko Makanan</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/card.css">
-    <link rel="stylesheet" href="../css/input.css">
     <style>
         body {
-            background-image: url("../assets/food-blur.png");
+            background-image: url("../assets/food-blur.jpg");
 
 
             background-attachment: fixed;
@@ -27,6 +26,29 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+
+        .submit input
+        {
+            background-color: #0fc70f;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.5s;
+            width: 70px;
+        }
+
+        .submit input:hover
+        {
+            width: 75px;
+            transform: translateY(-7px);
         }
     </style>
 </head>
@@ -87,19 +109,23 @@
     <main>
         <div class="delivery">
             <h2>Order Makanan</h2>
+            <br><br>
             <form action="message.php" method="post">
                 <div class="input">
-                    <input type="text" name="nama" id="nama" required><br>
                     <label for="nama">Nama Lengkap</label>
+                    <input type="text" name="nama" id="nama" required><br>
                 </div>
+                <br>
                 <div class="input">
-                    <input type="text" name="alamat" id="alamat" required><br>
                     <label for="Alamat">Alamat Rumah</label>
+                    <input type="text" name="alamat" id="alamat" required><br>
                 </div>
+                <br><br>
                 <div class="input">
-                    <input type="number" name="nomer" id="nomer"><br>
                     <label for="nomer">Nomer Telepon</label>
+                    <input type="number" name="nomer" id="nomer"><br>
                 </div>
+                <br><br>
                 
                 <div class="input">
                     <label for="makanan">Pilih Pesanan</label>
@@ -110,6 +136,7 @@
                         <option value="cuanki">Bakso cuanki</option>
                     </select>
                 </div>
+                <br><br>
                 <div class="input">
                     <p>Pedas</p>
                     <input type="radio" name="radio" id="radio" value="level 1"><label for="lev1">Level 1</label>
@@ -118,10 +145,12 @@
                     <input type="radio" name="radio" id="radio" value="level 4"><label for="lev4">Level 4</label>
                     <input type="radio" name="radio" id="radio" value="level 5"><label for="lev5">Level 5</label>
                 </div>
+                <br><br>
                 <div class="submit">
                     <input type="submit" value="Order">
                 </div>
             </form>
+            <br><br><br>
             <?php
             if (isset($_POST['nama'])) {
                 $nama = $_POST['nama'];
@@ -146,16 +175,19 @@
                 {
                     $total = $total + 25000;
                 }
-                echo "<h3>$nama</h3>";
-                echo "<h3>$alamat</h3>";
-                echo "<h3>$nomer</h3>";
-                echo "<h3>$makanan</h3>";
-                echo "<h3>$radio</h3>";
-                echo "<h3>$total</h3>";
+                echo "<h2>Orderan Anda</h2>";
+                echo "<p>Nama : $nama</p>";
+                echo "<p>Alamat : $alamat</p>";
+                echo "<p>Nomer : $nomer</p>";
+                echo "<p>Makanan : $makanan</p>";
+                echo "<p>Pedas : $radio</p>";
+                echo "<p>Total : $total</p>";
+                
+                $fp = fopen("message.txt", "a+");
+                fwrite($fp, "$nama|$alamat|$nomer|$makanan|$radio|$total\n");
+                fclose($fp);
             }
-            $fp = fopen("message.txt", "a+");
-            fwrite($fp, "$nama|$alamat|$nomer|$makanan|$radio|$total\n");
-            fclose($fp);
+            
             ?>
         </div>
     </main>

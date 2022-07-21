@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/card.css">
     <style>
         body {
-            background-image: url("../assets/food-blur.png");
+            background-image: url("../assets/food-blur.jpg");
 
 
             background-attachment: fixed;
@@ -18,8 +18,8 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        .user
-        {
+
+        .delivery{
             padding: 20px;
             border-radius: 7px;
             display: flex;
@@ -67,9 +67,6 @@
                         <span class="text">About</span>
                     </a>
                 </li>
-                
-                
-                
 
                 <li class="list" style="--clr:#b145e9;">
                     <a href="#">
@@ -84,8 +81,28 @@
     </header>
 
     <main>
-        <div class="user">
-            <h2>list Pesanan</h2>
+        <div class="delivery">
+            <h2>list pesanan</h2>
+            <?php
+            $fp = fopen("message.txt", "r");
+            while($isi = fgets($fp, 100)){
+                $pisah = explode("|", $isi);
+                echo "<br>";
+                echo "nama : ".$pisah[0];
+                echo "<br>";
+                echo "Alamat : ".$pisah[1];
+                echo "<br>";
+                echo "No HP : ".$pisah[2];
+                echo "<br>";
+                echo "Pesanan : ".$pisah[3];
+                echo "<br>";
+                echo "level pedas : ".$pisah[4];
+                echo "<br>";
+                echo "total Harga : ".$pisah[5];
+                echo "<br>";
+                echo "<hr><hr><hr><hr>";
+            }
+            ?>
         </div>
     </main>
     <footer>
