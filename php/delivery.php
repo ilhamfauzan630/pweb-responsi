@@ -110,7 +110,7 @@
         <div class="delivery">
             <h2>Order Makanan</h2>
             <br><br>
-            <form action="message.php" method="post">
+            <form action="delivery.php" method="post">
                 <div class="input">
                     <label for="nama">Nama Lengkap</label>
                     <input type="text" name="nama" id="nama" required><br>
@@ -139,11 +139,11 @@
                 <br><br>
                 <div class="input">
                     <p>Pedas</p>
-                    <input type="radio" name="radio" id="radio" value="level 1"><label for="lev1">Level 1</label>
-                    <input type="radio" name="radio" id="radio" value="level 2"><label for="lev2">Level 2</label>
-                    <input type="radio" name="radio" id="radio" value="level 3"><label for="lev3">Level 3</label>
-                    <input type="radio" name="radio" id="radio" value="level 4"><label for="lev4">Level 4</label>
-                    <input type="radio" name="radio" id="radio" value="level 5"><label for="lev5">Level 5</label>
+                    <input type="radio" name="radio" id="radio" value="level 1"><label for="lev1">Level 1</label>&nbsp;
+                    <input type="radio" name="radio" id="radio" value="level 2"><label for="lev2">Level 2</label>&nbsp;
+                    <input type="radio" name="radio" id="radio" value="level 3"><label for="lev3">Level 3</label>&nbsp;
+                    <input type="radio" name="radio" id="radio" value="level 4"><label for="lev4">Level 4</label>&nbsp;
+                    <input type="radio" name="radio" id="radio" value="level 5"><label for="lev5">Level 5</label>&nbsp;
                 </div>
                 <br><br>
                 <div class="submit">

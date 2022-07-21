@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 <li class="list" style="--clr:#0fc70f;">
-                    <a href="delivery">
+                    <a href="delivery.php">
                         <span class="icon">
                             <ion-icon name="chatbubbles-outline"></ion-icon>
                         </span>

@@ -1,3 +1,4 @@
 ilham|Desa Cikancana|45|mie|level 1|20000
 ilham|Desa Cikancana|45|mie|level 4|20000
 ilham|Desa Cikancana|805939466518|bakso|level 1|15000
+ilham|Desa Cikancana|677|mie|level 3|20000
