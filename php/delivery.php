@@ -79,7 +79,7 @@
                         <span class="icon">
                             <ion-icon name="chatbubbles-outline"></ion-icon>
                         </span>
-                        <span class="text">Messages</span>
+                        <span class="text">Delivery</span>
                     </a>
                 </li>
                 <li class="list" style="--clr:#ffa177;">
@@ -87,7 +87,7 @@
                         <span class="icon">
                             <ion-icon name="person-outline"></ion-icon>
                         </span>
-                        <span class="text">About</span>
+                        <span class="text">List Pesanan</span>
                     </a>
                 </li>
 
