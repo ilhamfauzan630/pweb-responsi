@@ -88,19 +88,18 @@
             while($isi = fgets($fp, 100)){
                 $pisah = explode("|", $isi);
                 echo "<br>";
-                echo "nama : ".$pisah[0];
+                echo "<h2>Pesanan $pisah[3]</h2>";
                 echo "<br>";
-                echo "Alamat : ".$pisah[1];
+                echo "<p>nama : $pisah[0]</p>";
                 echo "<br>";
-                echo "No HP : ".$pisah[2];
+                echo "<p>Alamat : $pisah[1]</p>";
                 echo "<br>";
-                echo "Pesanan : ".$pisah[3];
+                echo "<p>No HP : $pisah[2]</p>";
                 echo "<br>";
-                echo "level pedas : ".$pisah[4];
+                echo "<p>level pedas : $pisah[4] </p>";
                 echo "<br>";
-                echo "total Harga : ".$pisah[5];
-                echo "<br>";
-                echo "<hr><hr><hr><hr>";
+                echo "<p>total Harga : $pisah[5]</p>";
+                echo "<br><br><br><br>";
             }
             ?>
         </div>
