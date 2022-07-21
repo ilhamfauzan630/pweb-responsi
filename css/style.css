@@ -10,16 +10,26 @@
 body
 {
     background: #3d4152;
+    overflow-x: hidden;
 }
-
 
 main
 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 20% 0 20%;
+}
+
+article
+{
+    padding-left: 15%;
+    display: flex;
+}
+section
+{
+    flex-grow: 1;
+    position: relative;
+    margin: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
 }
 
 .navigation
@@ -32,6 +42,9 @@ main
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 10;
 }
 
 .navigation.open
