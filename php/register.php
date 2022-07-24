@@ -27,6 +27,27 @@
             justify-content: center;
             align-items: center;
         }
+
+        .submit input {
+            background-color: #0fc70f;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.5s;
+            width: 70px;
+        }
+
+        .submit input:hover {
+            width: 75px;
+            transform: translateY(-7px);
+        }
     </style>
 </head>
 
@@ -59,17 +80,16 @@
                         <span class="text">Delivery</span>
                     </a>
                 </li>
-                <li class="list active" style="--clr:#ffa177;">
-                    <a href="#">
+                <li class="list" style="--clr:#ffa177;">
+                    <a href="user.php">
                         <span class="icon">
                             <img src="../assets/svg/list.svg" alt="user" width="30px">
                         </span>
                         <span class="text">List Pesanan</span>
                     </a>
                 </li>
-
-                <li class="list" style="--clr:#b145e9;">
-                    <a href="register.php">
+                <li class="list active" style="--clr:#b145e9;">
+                    <a href="#">
                         <span class="icon">
                             <img src="../assets/svg/cart.svg" alt="cart" width="30px">
                         </span>
@@ -82,24 +102,51 @@
 
     <main>
         <div class="delivery">
-            <h2>list pesanan</h2>
+            <h2>Registrasi</h2>
+            <br><br>
+            <form action="register.php" method="post">
+            <div class="input">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" name="nama" id="nama" required><br>
+                </div>
+                <br>
+                <div class="input">
+                    <label for="Alamat">Alamat Rumah</label>
+                    <input type="text" name="alamat" id="alamat"><br>
+                </div>
+                <br><br>
+                <div class="input">
+                    <label for="nomer">Nomer Telepon</label>
+                    <input type="number" name="nomer" id="nomer"><br>
+                </div>
+                <br><br>
+                <div class="input">
+                    <p>Jenis Kelamin</p>
+                    <input type="radio" name="radio" id="radio" value="pria"><label for="pria">Laki-laki</label>&nbsp;
+                    <input type="radio" name="radio" id="radio" value="wanita"><label for="wanita">Perempuan</label>&nbsp;
+                </div>
+                <br><br>
+                <div class="input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email"><br>
+                </div>
+                <br><br>
+                <div class="submit">
+                    <input type="submit" value="submit" style="background-color: #b145e9;">
+                </div>
+            </form>
             <?php
-            $fp = fopen("message.txt", "r");
-            while ($isi = fgets($fp, 100)) {
-                $pisah = explode("|", $isi);
-                echo "<br>";
-                echo "<h2>Pesanan $pisah[3]</h2>";
-                echo "<br>";
-                echo "<p>nama : $pisah[0]</p>";
-                echo "<br>";
-                echo "<p>Alamat : $pisah[1]</p>";
-                echo "<br>";
-                echo "<p>No HP : $pisah[2]</p>";
-                echo "<br>";
-                echo "<p>level pedas : $pisah[4] </p>";
-                echo "<br>";
-                echo "<p>total Harga : $pisah[5]</p>";
-                echo "<br><br><br><br>";
+            if (isset($_POST['nama'])) {
+                $nama = $_POST['nama'];
+                $alamat = $_POST['alamat'];
+                $nomer = $_POST['nomer'];
+                $jk = $_POST['radio'];
+                $email = $_POST['email'];
+                if ($nama == "" || $alamat == "" || $nomer == "" || $jk == "" || $email == "") {
+                    echo "<script>alert('Data tidak boleh kosong')</script>";
+                }else{
+                    echo "Anda Telah Berhasil Registrasi";
+                }
             }
             ?>
         </div>

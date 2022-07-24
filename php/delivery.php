@@ -18,8 +18,8 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        .delivery
-        {
+
+        .delivery {
             padding: 20px;
             border-radius: 7px;
             display: flex;
@@ -28,8 +28,7 @@
             align-items: center;
         }
 
-        .submit input
-        {
+        .submit input {
             background-color: #0fc70f;
             border: none;
             color: white;
@@ -45,8 +44,7 @@
             width: 70px;
         }
 
-        .submit input:hover
-        {
+        .submit input:hover {
             width: 75px;
             transform: translateY(-7px);
         }
@@ -61,7 +59,7 @@
                 <li class="list" style="--clr:#2196f3;">
                     <a href="../index.html">
                         <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
+                            <img src="../assets/svg/home.svg" alt="home" width="30px">
                         </span>
                         <span class="text">Home</span>
                     </a>
@@ -69,7 +67,7 @@
                 <li class="list" style="--clr:#f44336;">
                     <a href="food.html">
                         <span class="icon">
-                            <ion-icon name="fast-food-outline"></ion-icon>
+                            <img src="../assets/svg/food.svg" alt="food" width="30px">
                         </span>
                         <span class="text">Food</span>
                     </a>
@@ -77,7 +75,7 @@
                 <li class="list active" style="--clr:#0fc70f;">
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="chatbubbles-outline"></ion-icon>
+                            <img src="../assets/svg/chat.svg" alt="chat" width="30px">
                         </span>
                         <span class="text">Delivery</span>
                     </a>
@@ -85,19 +83,15 @@
                 <li class="list" style="--clr:#ffa177;">
                     <a href="user.php">
                         <span class="icon">
-                            <ion-icon name="person-outline"></ion-icon>
+                            <img src="../assets/svg/list.svg" alt="user" width="30px">
                         </span>
                         <span class="text">List Pesanan</span>
                     </a>
                 </li>
-
-
-
-
                 <li class="list" style="--clr:#b145e9;">
-                    <a href="#">
+                    <a href="register.php">
                         <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
+                            <img src="../assets/svg/cart.svg" alt="cart" width="30px">
                         </span>
                         <span class="text">Settings</span>
                     </a>
@@ -126,7 +120,7 @@
                     <input type="number" name="nomer" id="nomer"><br>
                 </div>
                 <br><br>
-                
+
                 <div class="input">
                     <label for="makanan">Pilih Pesanan</label>
                     <select name="makanan" id="makanan">
@@ -159,20 +153,13 @@
                 $makanan = $_POST['makanan'];
                 $radio = $_POST['radio'];
                 $total = 0;
-                if($makanan == "batagor")
-                {
+                if ($makanan == "batagor") {
                     $total = $total + 10000;
-                }
-                else if($makanan == "bakso")
-                {
+                } else if ($makanan == "bakso") {
                     $total = $total + 15000;
-                }
-                else if($makanan == "mie")
-                {
+                } else if ($makanan == "mie") {
                     $total = $total + 20000;
-                }
-                else if($makanan == "cuanki")
-                {
+                } else if ($makanan == "cuanki") {
                     $total = $total + 25000;
                 }
                 echo "<h2>Orderan Anda</h2>";
@@ -182,12 +169,12 @@
                 echo "<p>Makanan : $makanan</p>";
                 echo "<p>Pedas : $radio</p>";
                 echo "<p>Total : $total</p>";
-                
+
                 $fp = fopen("message.txt", "a+");
                 fwrite($fp, "$nama|$alamat|$nomer|$makanan|$radio|$total\n");
                 fclose($fp);
             }
-            
+
             ?>
         </div>
     </main>
@@ -195,8 +182,6 @@
 
     </footer>
     <script src="../js/script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
